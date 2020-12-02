@@ -1,23 +1,21 @@
 #include<iostream>
 using namespace std;
 
-int reverseANo(long long n){
+int reverseANo(int n){
 
-    int a = 0;
+    int rev_n = 0;
     while( n > 0){
-        int r = n%10;
-
-        int a = a * 10 + r;
+        rev_n = rev_n * 10 + n%10;
 
         n = n/10;
     }
-    return a;
+    return rev_n;
 }
 
 
 int main(){
 
-    long long n;
+    int n;
     cin>>n;
 
     int x = reverseANo(n);
