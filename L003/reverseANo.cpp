@@ -1,3 +1,7 @@
+1. This is the first presentation of a reverse no.
+    I/P : 8366435     O/P : 5346638
+        
+
 #include<iostream>
 using namespace std;
 
@@ -22,4 +26,39 @@ int main(){
     cout<<x<<endl;
 
     return 0;
+}
+
+
+2. This is the code for line-wise presentation of the digits of the reverse number
+
+I/P: 234727
+O/P: 7
+     2
+     7
+     4
+     3
+     2
+
+#include<iostream>
+using namespace std;
+
+void reverseANo(int n){
+
+    long long rev_n = 0;
+    while( n > 0){
+        int r = n%10;
+        cout<<r<<endl;
+        n = n/10;
+    }
+    
+}
+
+
+int main(){
+
+    int n;
+    cin>>n;
+
+    reverseANo(n);
+    
 }
