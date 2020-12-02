@@ -29,6 +29,15 @@ public class reverseANo {
 
 }
 
+2. This is the code for line-wise presentation of the digits of the reverse number
+
+I/P: 234727
+O/P: 7
+     2
+     7
+     4
+     3
+     2
 
 
 import java.util.Scanner;
