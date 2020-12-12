@@ -2,27 +2,44 @@
 using namespace std;
 
 
-void pattern6_(int row){
-    int nsp=1;
-    int nst=row/2+1;
-    for(int r=1;r<=row;r++){
-            for(int csp=1;csp<=nsp;csp++){
-                    cout<<"\t";
-                }
+void pattern15_(int row){
+    
+    int sp = row/2;
+    int st = 1;
 
-            for(int cst=1;cst<=nst;cst++){
-                    cout<<count + "\t";
-                }  
+    int val = 1;
+    for(int i=1;i<=row;i++){
 
-        if(r <= row/2){
-            nst--;
-            nsp+=2;
+        for(int j = 1 ; j<=sp;j++){
+            cout<<"\t";
+        }
+        int cval = val;
+        for(int j = 1 ; j<=st;j++){
+            cout<<cval<<"\t";
+            
+
+            if(j <= st/2){
+                cval++;
+            }
+            else{
+                cval--;
+            }
+        }
+
+
+        if(i <= row/2){
+
+
+            sp--;
+            st += 2;
+            val++;
         }
         else{
-            nst++;
-            nsp-=2;
+            sp++;
+            st -= 2;
+            val--;
         }
-        cout<<endl;
+       cout<<endl;
     }
 }
 
@@ -31,6 +48,6 @@ int main(){
     int n;
     cin>>n;
 
-    pattern6_(n);
+    pattern15_(n);
     return 0;
 }
