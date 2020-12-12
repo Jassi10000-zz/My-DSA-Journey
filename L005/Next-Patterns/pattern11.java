@@ -1,31 +1,27 @@
-import java.util.Scanner;
+#include<iostream>
+using namespace std;
 
-public class pattern11{
-
-    public static Scanner sc = new Scanner(System.in);
-
-    public static void pattern11_(int n){
-
-        int nsp=1;
-        int count = 0;
+void pattern11(int n){
+     int nsp=1;
+        int value = 0;
         for(int r=1;r<=n;r++){
             for(int csp=1;csp<=nsp;csp++){
-                count++;
-                System.out.print( count + "\t");
+                value++;
+                cout<<value<<"\t";
                 
             }
             nsp++;
             
-            System.out.println();
+            cout<<endl;
         }
+}
 
+int main(){
 
-    }
+    int n;
+    cin>>n;
 
-
-    public static void main(String[] args){
-
-        int n = sc.nextInt();
-        pattern11_(n);
-    }
+    pattern11(n);
+    
+    return 0;
 }
