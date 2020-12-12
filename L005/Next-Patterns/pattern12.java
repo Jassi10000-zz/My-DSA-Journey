@@ -1,28 +1,26 @@
-import java.util.Scanner;
+#include<iostream>
+using namespace std;
 
-public class pattern12 {
 
-    public static Scanner sc = new Scanner(System.in);
+void pattern12_(int n){
+     int a=0 , b=1;
 
-    public static void pattern12_(int n) {
-
-        int a=0 , b=1;
-
-        for (int i = 0; i < n; i++) {
+        for (int i = 1; i <= n; i++) {
             for (int j= 1; j <=i; j++) {
-                System.out.print(a + "\t");
+                cout<<a<<"\t";
                 int c = a + b;
                 a = b;
                 b = c;
             }
-            System.out.println();
+            cout<<endl;
         }
-
-    }
-
-    public static void main(String[] args) {
-
-        int n = sc.nextInt();
-        pattern12_(n);
-    }
 }
+
+int main(){
+
+    int n;
+    cin>>n;
+    pattern12_(n);
+
+    return 0;
+}                                     
