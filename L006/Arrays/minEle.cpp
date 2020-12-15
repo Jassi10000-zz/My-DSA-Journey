@@ -1,19 +1,27 @@
-private static int minElement(int[] arr){
-        int minEl = (int) 1e8;
+#include<iostream>
+#include<vector>
 
-        for(int el: arr){
-            if(el < minEl) minEl = el;
-        }
+using namespace std;
 
-        return minEl;
+
+int minEle(vector<int>arr){
+    int minEl = (int) 1e8;
+
+    for(int el:arr){
+        if (el < maxEl) minEl = el;
     }
+    return minEl;
+}
+int main(){
 
+    int n;
+    cin>>n;
 
-     //  public int minElement(int arr[]){
-    //     int minEle = -1e8;
-    //     for(int i=0;i<arr.length;i++){
-    //         if(a[i]<minEle)
-    //          minEle = a[i]; 
-    //     }
-    //     return minEle;
-    // }
+    vector<int>arr(n,0);
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    cout<<"Min element is " <<minEle(arr);
+    return 0;
+}
+
