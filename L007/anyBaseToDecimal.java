@@ -4,7 +4,7 @@ public class decimalToAnyBase {
 
     public static Scanner sc = new Scanner(System.in);
 
-    public static int dtab(int n, int a) {
+    public static int abtd(int n, int a) {
 
         int sum = 0;
         int p = 1;
@@ -25,6 +25,6 @@ public class decimalToAnyBase {
 
         int conB = sc.nextInt();
 
-        dtab(n, conB);
+        System.out.println(abtd(n, conB));
     }
 }
