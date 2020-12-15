@@ -8,7 +8,7 @@ int minEle(vector<int>arr){
     int minEl = (int) 1e8;
 
     for(int el:arr){
-        if (el < maxEl) minEl = el;
+        if (el < minEl) minEl = el;
     }
     return minEl;
 }
