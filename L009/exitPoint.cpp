@@ -32,8 +32,6 @@ void exitPoint(vector<vector<int>>&arr){
                 break;
             }
         }
-
-
        cout<<i<<endl;
        cout<<j<<endl;
 
