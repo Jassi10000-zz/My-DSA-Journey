@@ -5,8 +5,7 @@ public class exitPoint{
     public static Scanner sc = new Scanner(System.in);
     public static void exitPoint_(int[][] arr){
 
-        int d = 0;
-        int i=0,j=0;
+        int d = 0,i=0,j=0;
 
         while(true){
             
