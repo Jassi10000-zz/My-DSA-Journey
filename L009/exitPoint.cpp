@@ -4,8 +4,7 @@ using namespace std;
 
 void exitPoint(vector<vector<int>>&arr){
 
-        int d = 0;
-        int i=0,j=0;
+        int d = 0,i=0,j=0;
 
         while(true){
             d = (d + arr[i][j]) % 4;
