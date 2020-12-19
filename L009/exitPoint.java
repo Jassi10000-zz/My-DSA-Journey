@@ -20,9 +20,7 @@ public class exitPoint{
             }else if(d == 3){
                 i--;
             }
-            
-            
-            
+
             if(i < 0){
                 i++;
                 break;
@@ -37,8 +35,6 @@ public class exitPoint{
                 break;
             }
         }
-
-
         System.out.println(i);
         System.out.println(j);
 
