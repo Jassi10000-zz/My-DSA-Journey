@@ -18,9 +18,7 @@ void exitPoint(vector<vector<int>>&arr){
             }else if(d == 3){
                 i--;
             }
-            
-            
-            
+   
             if(i < 0){
                 i++;
                 break;
