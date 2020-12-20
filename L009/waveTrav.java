@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main{
+public class waveTrav{
 
     public static Scanner sc = new Scanner(System.in);
 
