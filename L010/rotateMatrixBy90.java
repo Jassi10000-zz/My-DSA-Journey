@@ -9,7 +9,9 @@ public class rotateMatrixBy90{
         //transpose
         for(int i=0;i<arr.length;i++){
             for(int j=i;j<arr[0].length;j++){
-                arr[i][j] = sc.nextInt();
+                int temp = arr[i][j];
+                arr[i][j] = arr[j][i];
+                arr[j][i] = temp;
             }
         }
 
@@ -32,11 +34,12 @@ public class rotateMatrixBy90{
 
     public static void display(int[][] arr){
 
-        for(int i =0 ;i<n;i++){
-            for(int j=0;j<n;j++){
+        for(int i =0 ;i<arr.length;i++){
+            for(int j=0;j<arr[0].length;j++){
 
-                System.out.println(arr[i][j]);
+                System.out.print(arr[i][j] + " ");
             }
+            System.out.println();
         }
     }
     public static void main(String[] args){
