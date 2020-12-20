@@ -2,21 +2,17 @@
 #include<vector>
 using namespace std;
 
-void tranpose(vector<vector<int>>&arr){
+void rotate(vector<vector<int>>&arr){
 
-    for(int j=0;j<arr[0].size();j++){
-        for(int i=0;i<arr.size();i++){
-            cout<<arr[i][j]<<" ";
+   for(int i=0;i<arr.size();i++){
+       for(int j=i;j<arr[0].size();j++){
+           int temp = arr[i][j];
+           arr[i][j] =  arr[j][i];
+           arr[j][i] = temp;
         }
-        cout<<endl;
-    }
+   }
 
-    swap(arr);
-}
-
-void swap(vector<vector<int>>&arr){
-
-    for(int i=0;i<arr.size();i++){
+   for(int i=0;i<arr.size();i++){
         int li = 0;
         int ri = arr[i].size() -1;
 
@@ -32,18 +28,16 @@ void swap(vector<vector<int>>&arr){
         }
     }
 
-    display(arr);
-}
-
-void display(vector<vector<int>>&arr){
-
-      for(int i=0;i<arr.size();i++){
+    for(int i=0;i<arr.size();i++){
         for(int j=0;j<arr[0].size();j++){
             cout<<arr[i][j]<<" ";
         }
+        cout<<endl;
     }
 
 }
+
+
 
 int main(){
 
@@ -57,6 +51,6 @@ int main(){
         }
     }
 
-    transpose(arr);
+    rotate(arr);
     return 0;
 }
