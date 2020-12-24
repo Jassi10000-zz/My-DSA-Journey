@@ -1,3 +1,5 @@
+// In cpp , string datatype starts with 's'
+
 #include<iostream>
 using namespace std;
 
