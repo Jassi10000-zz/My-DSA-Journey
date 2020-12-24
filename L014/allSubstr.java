@@ -1,3 +1,5 @@
+// In java , String datatype starts with 'S'
+
 import java.util.Scanner;
 
 public class allSubstr{
