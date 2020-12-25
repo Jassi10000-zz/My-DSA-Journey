@@ -1,35 +1,72 @@
 #include<iostream>
 using namespace std;
 
-void compression1(string str) {
-	int i;
-	for(i=0; i<str.length()-1; i++) {
-		if(str[i] != str[i+1])
-		cout<<str[i];
-	}
-	cout<<str[str.length()-1];
-}
-void compression2(string str) {
-	int i, count = 1;
-	for(i=0; i<str.length()-1; i++) {
-		if(str[i] == str[i+1])
-		count++;
-		else if(count>1) {
-			cout<<str[i]<<count;
-			count = 1;
-		} 
-		else 
-		cout<<str[i];
-	}
-	cout<<str[str.length()-1];
-	if(count > 1)
-	cout<<count;
-}
-int main() {
-	string str;
-	cin>>str;
-	compression1(str);
-	cout<<"\n";
-	compression2(str);
-	return 0;
-}
+    string strCompress2_(string str) {
+
+            if (str.length() <= 1) {
+                return str;
+            }
+
+        string sb = "";
+        sb+=str[0];
+
+        int i = 1;
+        while (i <= str.length()) {
+
+            int count = 1;
+
+            while (i < str.length() && str[i] == str[i-1]) {
+
+                count++;
+                i++;
+
+            }
+            if (count != 1) {
+                sb+=to_string(count);
+            }
+            if (i < str.length())
+                sb+=str[i];
+            i++;
+        }
+
+        return sb;
+    }
+
+    string strCompress1_(string str) {
+
+            if (str.length() <= 1) {
+                return str;
+            }
+
+        string sb = "";
+        sb+=str[0];
+
+        int i = 1;
+        while (i <= str.length()) {
+            while (i < str.length() && str[i] == str[i-1]) {
+                i++;
+
+            }
+            
+            if (i < str.length())
+                sb+=str[i];
+            i++;
+        }
+
+        return sb;
+    }
+
+    
+
+    int main() {
+
+        string str;
+        cin>>str;
+
+        
+        cout<<strCompress1_(str)<<endl;
+        cout<<strCompress2_(str)<<endl;
+
+
+        return 0;
+    }
