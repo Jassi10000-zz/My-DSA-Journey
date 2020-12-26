@@ -1,1 +1,1 @@
-hello
+More ques on basic Strings were done in this lecture
