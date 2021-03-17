@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class findData2 {
+public class finddata2 {
     public static class Node {
         int data;
         Node left;
