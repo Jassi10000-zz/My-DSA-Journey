@@ -111,16 +111,11 @@ public class Main {
         return Math.max(Math.max(leftMax, rightMax), node.data);
     }
 
-    public static int height(Node node) {
-        // write your code here
-        if (node == null)
-            return 0;
-
+    public static int height(Node node){
+        if(node == null )return -1; // -1 for edges and 0 for nodes
         int leftHeight = height(node.left);
         int rightHeight = height(node.right);
-
-        return Math.max(Math.max(leftHeight, rightHeight), node.data);
-
+        return Math.max(leftHeight , rightHeight ) + 1;
     }
 
     public static void main(String[] args) throws Exception {
