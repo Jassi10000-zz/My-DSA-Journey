@@ -108,6 +108,7 @@ public class NodetoRootPath {
         // write your code here
         path = new ArrayList<>(); // reinitialisation of the arraylist
         Helper(node, data);
+
         return path;
 
     }

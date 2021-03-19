@@ -80,28 +80,52 @@ public class RoottoNodePath {
         display(node.right);
     }
 
-    public static boolean find(Node root , int data , ArrayList<Integer> ans){
+    public static boolean find(Node root, int data, ArrayList<Integer> ans) {
 
-        if(root == null) return false;
+        if (root == null)
+            return false;
 
         boolean res = (root.data == data);
-        if(res){
+        if (res) {
             ans.add(root.data);
         }
-        return res || find(root.left , data , ans) || find(root.right , data ,ans);
+        return res || find(root.left, data, ans) || find(root.right, data, ans);
 
+    }
+
+    // Faith : Ham pehle se hi path mein included hai
+
+    static ArrayList<Integer> path = new ArrayList<>();
+
+    public static boolean Helper(Node node, int data) {
+        if (node == null)
+            return false;
+
+        boolean res = (node.data == data) || Helper(node.left, data) || Helper(node.right, data);
+        if (res) {
+            path.add(node.data);
+        }
+
+        return res;
+
+    }
+
+    public static ArrayList<Integer> reverse(ArrayList<Integer> ans) {
+
+        ArrayList<Integer> rev = new ArrayList<>();
+
+        for (int i = ans.size() - 1; i >= 0; i--) {
+            rev.add(ans.get(i));
+        }
+
+        return rev;
     }
 
     public static ArrayList<Integer> Root2NodePath(Node root, int data) {
         // write your code here
 
-        ArrayList<Integer> ans = new ArrayList<>();
-
-        if(find(root , data , ans)){
-            return ans;
-        }
-
-        return ans;
+        Helper(root, data);
+        return reverse(path);
 
     }
 
