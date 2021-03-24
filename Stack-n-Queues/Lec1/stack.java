@@ -6,7 +6,8 @@ public class stack {
 
     // constructors
 
-    protected void initialiseVariables() {
+    protected void initialiseVariables(int capacity) {
+        this.capacity = capacity;
         this.arr = new int[this.capacity];
         // we have initialised these two already but here also its very necessary
         this.elementCount = 0;
@@ -16,14 +17,14 @@ public class stack {
 
     // default constructor
     public stack() {
-        this.capacity = 10;
+        initialiseVariables(10);
 
     }
 
     // parametrised constructor
     public stack(int size) {
         this.capacity = size;
-        initialiseVariables();
+        initialiseVariables(capacity);
     }
 
     // Basic Functions
@@ -52,10 +53,14 @@ public class stack {
         }
     }
 
-    public void push(int data) throws Exception {
-        OverflowException();
+    protected void push_(int data) {
         this.arr[++tos] = data;
         this.elementCount++;
+    }
+
+    public void push(int data) throws Exception {
+        OverflowException();
+        push_(data);
     }
 
     public int top() throws Exception {
