@@ -22,10 +22,11 @@ public class dynamicStack extends stack {
     protected void push_(int data) {
         if (super.capacity == super.elementCount) {
             int[] temp = super.arr;
-            initialiseVariables(2 * super.capacity); // agr array full hogya toh size ko double krdo
+            super.initialiseVariables(2 * super.capacity); // agr array full hogya toh size ko double krdo
             for(int ele : temp) super.push_(ele); // this is not a recursive call , rather a reference to parent's push method
-             
+
         }
+        super.push_(data);  // after incrasing the size we now call the parent push method
     }
 
     public void push(int data) {
