@@ -39,7 +39,14 @@ public class queue {
         return this.elementCount == 0;
     }
 
-    public void display() {
+    public String display() {
+        StringBuilder sb = new StringBuilder(); // done to first store all the elements and then print collectively
+        for (int i = this.front; i < this.elementCount; i++) {
+            int idx = i % this.capacity;
+            sb.append(this.arr[idx]);
+wdhf
+        }
+        return sb.toString();
 
     }
 
@@ -60,10 +67,10 @@ public class queue {
     }
 
     protected void push_(int data) {
-       this.arr[this.back] = data;
-       this.elementCount++;
-       this.back = (this.back+1) % this.capacity;
-       
+        this.arr[this.back] = data;
+        this.elementCount++;
+        this.back = (this.back + 1) % this.capacity;
+
     }
 
     public void push(int data) throws Exception {
@@ -77,9 +84,12 @@ public class queue {
     }
 
     protected int pop_() {
-        int returnValue = this.arr[this.tos];
-        this.arr[this.tos--] = 0;
+        int returnValue = this.arr[this.front];
+        this.arr[this.front] = 0;
+
         this.elementCount--;
+        this.front = (this.front + 1) % this.capacity;
+
         return returnValue;
 
     }
