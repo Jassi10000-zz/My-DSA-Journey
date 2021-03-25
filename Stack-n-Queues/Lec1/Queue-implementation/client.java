@@ -1,13 +1,9 @@
 public class client {
     public static void main(String[] args) throws Exception {
-        dynamicStack st = new dynamicStack();
-        for (int i = 1; i <= 5; i++) {
-            st.push(i * 10);
+        queue q = new queue(6);
+        for (int i = 1; i < 6; i++) {
+            q.push(i * 10);
         }
-
-        while (st.size() != 0) {
-            System.out.println(st.pop());
-        }
-
+        System.out.println(q.display());
     }
 }

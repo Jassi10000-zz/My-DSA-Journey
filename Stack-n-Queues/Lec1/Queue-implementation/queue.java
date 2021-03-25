@@ -41,11 +41,17 @@ public class queue {
 
     public String display() {
         StringBuilder sb = new StringBuilder(); // done to first store all the elements and then print collectively
-        for (int i = this.front; i < this.elementCount; i++) {
-            int idx = i % this.capacity;
+        sb.append("[");
+        for (int i = 0; i < this.elementCount; i++) {
+            int idx = (this.front + i) % this.capacity;
             sb.append(this.arr[idx]);
-wdhf
+
+            if (i != this.elementCount) {
+                sb.append(",");
+            }
+
         }
+        sb.append("]");
         return sb.toString();
 
     }
