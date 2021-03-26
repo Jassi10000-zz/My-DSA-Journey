@@ -39,21 +39,21 @@ public class queue {
         return this.elementCount == 0;
     }
 
-    public String display() {
+    @Override
+    public String toString() {
         StringBuilder sb = new StringBuilder(); // done to first store all the elements and then print collectively
         sb.append("[");
         for (int i = 0; i < this.elementCount; i++) {
             int idx = (this.front + i) % this.capacity;
             sb.append(this.arr[idx]);
 
-            if (i != this.elementCount) {
+            if (i != this.elementCount - 1) {
                 sb.append(",");
             }
 
         }
         sb.append("]");
         return sb.toString();
-
     }
 
     // Exceptions -----> 1. Overflow Exception ( when stack becomes full and still

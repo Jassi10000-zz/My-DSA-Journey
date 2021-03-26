@@ -1,9 +1,9 @@
 public class client {
     public static void main(String[] args) throws Exception {
-        queue q = new queue(6);
+        dynamicQueue q = new dynamicQueue(6);
         for (int i = 1; i < 6; i++) {
-            q.push(i * 10);
+            q.push(i * 100);
         }
-        System.out.println(q.display());
+        System.out.println(q);
     }
 }
