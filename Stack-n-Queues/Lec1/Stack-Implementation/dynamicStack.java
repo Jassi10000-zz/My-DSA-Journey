@@ -11,7 +11,7 @@ public class dynamicStack extends stack {
 
     public dynamicStack(int[] arr) {
 
-        super.initialiseVariables(arr.length);
+        super.initialiseVariables(2 * arr.length);
 
         for (int ele : arr) {
             super.push_(ele);

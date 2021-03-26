@@ -37,6 +37,8 @@ public class stack {
         return this.elementCount == 0;
     }
 
+
+
     // Exceptions -----> 1. Overflow Exception ( when stack becomes full and still
     // we are puhsing data )
     // 2. Underflow Exception ( when stack is empty and still we are popping data )
