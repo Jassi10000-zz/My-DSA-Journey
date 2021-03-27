@@ -8,7 +8,7 @@ public class client {
         System.out.println(q.pop());
         System.out.println(q.pop());
         System.out.println(q.pop());
-        System.out.println(q.pop());
+
         System.out.println(q);
     }
 }
