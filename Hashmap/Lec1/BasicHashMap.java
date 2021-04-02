@@ -13,8 +13,15 @@ public class BasicHashMap {
         map.put("India", 10);
 
         for (String keys : map.keySet()) {
-            System.out.println(keys + "--> " + map.get(keys));
+            System.out.println(keys + " --> " + map.get(keys));
         }
+
+        String key = "UK";
+        if (map.containsKey(key))
+            System.out.println(map.get(key));
+
+        else
+            System.out.println("Not found");
     }
 
     public static void main(String[] args) {
