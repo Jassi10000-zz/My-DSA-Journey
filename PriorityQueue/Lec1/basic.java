@@ -10,6 +10,7 @@ public class basic {
             pq.add(i); // add has [logn] complexity
         }
 
+        // removing in Priority Queue also has total complexity as [nlogn]
         while (pq.size() != 0) {
             int ele = pq.peek(); // this will give overall min element in Priority Queue
             pq.remove();
