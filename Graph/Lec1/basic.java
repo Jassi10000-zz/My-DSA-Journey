@@ -39,6 +39,58 @@ public class basic {
 
     }
 
+    //find the edge
+    public static int findEdge(int u , int v){
+
+        for( int i = 0 ; i <graph[u].size() ; i++){
+            Edge e = graph[u].get(i);
+            if(e.v == v) 
+                return i;
+            
+            return -1;
+        }
+    }
+
+    //remove the edge
+    public static void removeEdge(int u , int v ){
+        int idx1 = findEdge(u,v);
+        int idx2 = findEdge(v,u);
+
+        // if(idx1 = -1 || idx2 == -1){
+        //     return;
+        // }
+
+
+        graph[u].remove(idx1);
+        graph[v].remove(idx2);
+       
+        
+    }
+
+    
+    // remove the vertex
+    public static int removeVertex( int u ){
+        while(graph[u].size() != 0){
+            int n  = graph[u].size();
+            Edge e  = graph[u].get(n-1); //getting the last no to not disturb the indexing 
+            
+            removeEdge(u , e.v);
+        }
+
+    }
+    
+    public  static boolean hasPath ( int source , int destination , boolean[] visited){
+
+        boolean res = false;
+        visited[source] = true;
+
+        if(!visited[e.v]){
+            res = res || hasPath( e.v , destination , visited );
+        }
+
+        return res;
+    }
+
     public static void main(String[] args) {
 
         for (int u = 0; u < N; u++) {
@@ -54,6 +106,9 @@ public class basic {
         addEdge(5, 6, 3);
 
         display();
+
+        boolean[] visited = new boolean[N];
+        System.out.println(hasPath(0,6,visited));
     }
 
 }
