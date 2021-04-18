@@ -47,8 +47,8 @@ public class basic {
             if(e.v == v) 
                 return i;
             
-            return -1;
         }
+        return -1;
     }
 
     //remove the edge
@@ -69,7 +69,7 @@ public class basic {
 
     
     // remove the vertex
-    public static int removeVertex( int u ){
+    public static void removeVertex( int u ){
         while(graph[u].size() != 0){
             int n  = graph[u].size();
             Edge e  = graph[u].get(n-1); //getting the last no to not disturb the indexing 
@@ -84,8 +84,11 @@ public class basic {
         boolean res = false;
         visited[source] = true;
 
-        if(!visited[e.v]){
-            res = res || hasPath( e.v , destination , visited );
+        for(Edge e : graph[source]){
+            
+            if(!visited[e.v]){
+                res = res || hasPath( e.v , destination , visited );
+            }
         }
 
         return res;
