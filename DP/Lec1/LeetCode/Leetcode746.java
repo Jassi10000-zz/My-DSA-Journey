@@ -21,7 +21,7 @@ class Leetcode746{
     }
 
     //Tabulation Method
-    public int minCostClimbingStairs(int[] cost, int N , int[] dp) {
+    public int minCostClimbingStairs_DP(int[] cost, int N , int[] dp) {
         
        for(int n=0;n<=N;n++){
         if(n <= 1){
@@ -40,12 +40,30 @@ class Leetcode746{
        return dp[N];
     }
 
+    //optimization Method
+    public int minCostClimbingStairs_Opti(int[] cost, int N) {
+        
+
+        int a = cost[0];
+        int b = cost[1];
+
+
+        for(int i=2;i<=N;i++){
+        
+            int minValue = Math.min(a,b) + (i != cost.length ? cost[i] : 0);
+            a = b;
+            b = minValue;
+        }
+ 
+        return b;
+     }
+
     public int minCostClimbingStairs(int[] cost) {
         
         int n = cost.length;
         int[] dp = new int[n+1];
         
-        int ans = minCostClimbingStairs(cost,n,dp);
+        int ans = minCostClimbingStairs_Opti(cost,n);
         
         return ans;
         
