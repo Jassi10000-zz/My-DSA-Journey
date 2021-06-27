@@ -29,6 +29,8 @@ public static TreeNode remove(TreeNode root, int data) {
         // as we took max from left so will work only on left portion
         root.left = remove(root.left, maxData);
 
+        return root;
+
     }
 }
 
