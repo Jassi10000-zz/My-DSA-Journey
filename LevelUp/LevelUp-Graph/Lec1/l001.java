@@ -47,12 +47,12 @@ public class l001 {
         return -1;
     }
 
-    public static int removeEdge(ArrayList<Edge>[] graph, int u, int v) {
+    public static void removeEdge(ArrayList<Edge>[] graph, int u, int v) {
 
         int index = findEdge(graph, u, v);
         graph[u].remove(index);
 
-        int index = findEdge(graph, v, u);
+        index = findEdge(graph, v, u);
         graph[v].remove(index);
     }
 
@@ -77,6 +77,50 @@ public class l001 {
         return res;
     }
 
+    public static int printAllPath(ArrayList<Edge>[] graph, int src, int dest, String pathSoFar, int wtSoFar,
+            boolean[] vis) {
+        if (src == dest) {
+            System.out.println(pathSoFar + dest + " --> " + wtSoFar + "(weight)");
+            return 1;
+        }
+
+        vis[src] = true;
+        int count = 0;
+        for (Edge e : graph[src]) {
+            if (!vis[e.v]) {
+                count += printAllPath(graph, e.v, dest, pathSoFar + src, wtSoFar + e.w, vis);
+            }
+        }
+        vis[src] = false;
+
+        return count;
+
+    }
+
+    // gcc
+    // complexity : O(V+E) or O(V)[ in case of all vertices ] or O(E)[ incase of all
+    // edges ]
+    public static int getConnectedComponents(ArrayList<Edge>[] graph) {
+        int components = 0;
+        int N = graph.length;
+        boolean[] vis = new boolean[N];
+        for (int i = 0; i < N; i++) {
+            if (!vis[i]) {
+                components++;
+                dfs_GCC(graph, i, vis);
+            }
+        }
+        return components;
+    }
+
+    public static void dfs_GCC(ArrayList<Edge>[] graph, int src, boolean[] vis) {   
+        vis[src] = true;
+        for (Edge e : graph[src]) {
+            if(!vis[e.v]){
+                dfs_GCC(graph, e.v, vis);
+            }
+        }
+    }
     // function for the graph
     public static void constructGraph() {
 
@@ -95,7 +139,11 @@ public class l001 {
         addEdge(graph, 5, 6, 3);
         addEdge(graph, 6, 4, 8);
 
-        display(graph);
+        // display(graph);
+        boolean[] vis = new boolean[N];
+        // System.out.println(dfs_findPath(graph, 0, 6, vis));
+
+        System.out.println(printAllPath(graph, 0, 6, "", 0, vis));
     }
 
     public static void main(String[] args) {
